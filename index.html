@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+  <h2>Student Profile</h2>
+  <input id="sid" placeholder="Student ID"/>
+  <button onclick="load()">Load</button>
+
+  <pre id="out"></pre>
+
+  <script>
+    async function load() {
+      const res = await fetch(
+        `http://localhost:5000/student/${sid.value}`
+      );
+      const data = await res.json();
+      out.innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
