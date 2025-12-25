@@ -1,44 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>ProofED</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>ProofED | Decentralized Academic Ledger</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body onload="loadCertificates()">
-<header>📘 ProofED-Academic Proof Platform</header>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="student.html">Student</a>
-  <a href="admin.html">Admin</a>
-  <a href="verify.html">Verify</a>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">ProofED</div>
+  <ul>
+    <li>Verify</li>
+    <li>Student</li>
+    <li>Admin</li>
+  </ul>
 </nav>
-<div class="container">
-  <div class="card">
-    <h2>Student Login (Demo)</h2>
-    <input id="name" placeholder="Student Name">
-    <input id="wallet" placeholder="Wallet Address">
-    <button onclick="loginStudent()">Login</button>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Decentralized Academic Credential Verification</h1>
+  <p>
+    Blockchain-powered, tamper-proof academic records with instant QR verification.
+  </p>
+
+  <div class="buttons">
+    <button class="primary">Issue Certificate</button>
+    <button>Student Login</button>
+    <button>Verify QR</button>
   </div>
-  <div class="card">
-    <h2>📜 Demo Certificates</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>S.No</th>
-          <th>Certificate</th>
-          <th>Issued By</th>
-          <th>Status</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="certTable"></tbody>
-    </table>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps">
+  <h2>How ProofED Works</h2>
+  <div class="step-grid">
+    <div class="card">🎓 Institute Issues Certificate</div>
+    <div class="card">⛓ Stored on Blockchain</div>
+    <div class="card">👤 Student Owns Record</div>
+    <div class="card">📱 QR Code Generated</div>
+    <div class="card">✅ Instant Verification</div>
   </div>
-</div>
-<footer>ProofED • Demo Platform • Blockchain Ready</footer>
-<script src="app.js"></script>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2>Why ProofED?</h2>
+  <div class="feature-grid">
+    <div class="card">❌ No Fake Certificates</div>
+    <div class="card">⚡ Instant Verification</div>
+    <div class="card">🔒 Student Data Control</div>
+    <div class="card">🏆 Contribution Badges</div>
+    <div class="card">🤖 AI Profile Summary</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Built with ❤️ using Blockchain & AI | ProofED
+</footer>
+
 </body>
 </html>
+
+
 
 
 
