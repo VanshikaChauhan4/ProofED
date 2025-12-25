@@ -1,99 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Decentralised Academic Contribution Ledger</title>
-
-  <!-- LINK CSS FILE -->
+  <title>ProofED</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-<header>
-  📘 Decentralised Academic Contribution Ledger
-</header>
-
+<body onload="loadCertificates()">
+<header>📘 ProofED-Academic Proof Platform</header>
+<nav>
+  <a href="index.html">Home</a>
+  <a href="student.html">Student</a>
+  <a href="admin.html">Admin</a>
+  <a href="verify.html">Verify</a>
+</nav>
 <div class="container">
-
-  <!-- STUDENT DASHBOARD -->
   <div class="card">
-    <h2>🎓 Student Dashboard</h2>
-
-    <button onclick="connectWallet()">Connect Wallet</button>
-    <p id="wallet"></p>
-
-    <p><b>Name:</b> Student Name</p>
-
-    <h3>📜 Academic Records</h3>
-    <ul>
-      <li>AI Hackathon Participation</li>
-      <li>Blockchain Fundamentals Course</li>
-    </ul>
-
-    <h3>⭐ Points</h3>
-    <div class="points">120</div>
-
-    <h3>🏅 Badges</h3>
-    <span class="badge">Top Contributor</span>
-    <span class="badge">Verified Student</span>
-
-    <h3>🔗 QR Code</h3>
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=student-verification-id">
+    <h2>Student Login (Demo)</h2>
+    <input id="name" placeholder="Student Name">
+    <input id="wallet" placeholder="Wallet Address">
+    <button onclick="loginStudent()">Login</button>
   </div>
-
-  <!-- ADMIN DASHBOARD -->
   <div class="card">
-    <h2>🏫 Admin Dashboard</h2>
-
-    <h3>Issue Academic Record</h3>
-    <input placeholder="Student Wallet Address">
-    <input placeholder="Record Name">
-    <button>Issue Record</button>
-
-    <h3>Approve Contributor</h3>
-    <button>Approve</button>
-
-    <h3>Assign Points & Badges</h3>
-    <input placeholder="Points">
-    <input placeholder="Badge Name">
-    <button>Assign</button>
+    <h2>📜 Demo Certificates</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>S.No</th>
+          <th>Certificate</th>
+          <th>Issued By</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="certTable"></tbody>
+    </table>
   </div>
-
-  <!-- PUBLIC VERIFICATION -->
-  <div class="card">
-    <h2>🌍 Public Verification</h2>
-
-    <input placeholder="Enter ID / Scan QR">
-    <p>Status: <span class="status-verified">Verified ✅</span></p>
-
-    <h3>👥 Contributors</h3>
-    <ul>
-      <li>Amit – <span class="status-verified">Verified</span></li>
-      <li>Riya – <span class="status-not">Not Verified</span></li>
-    </ul>
-  </div>
-
 </div>
-
-<footer>
-  Hackathon Prototype • Frontend Demo • Blockchain Ready 🚀
-</footer>
-
-<script>
-  async function connectWallet() {
-    if (window.ethereum) {
-      const accounts = await window.ethereum.request({
-        method: "eth_requestAccounts"
-      });
-      document.getElementById("wallet").innerText =
-        "Connected Wallet: " + accounts[0];
-    } else {
-      alert("Please install MetaMask");
-    }
-  }
-</script>
-
+<footer>ProofED • Demo Platform • Blockchain Ready</footer>
+<script src="app.js"></script>
 </body>
 </html>
+
 
 
