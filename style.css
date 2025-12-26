@@ -1,0 +1,148 @@
+:root {
+  --bg: #0b1220;
+  --panel: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.15);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #111827, #020617);
+  color: var(--text);
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 80px;
+  align-items: center;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  padding: 120px 80px;
+  gap: 80px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.hero p {
+  margin-top: 30px;
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+}
+
+.cta {
+  margin-top: 50px;
+}
+
+button {
+  padding: 16px 28px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--accent);
+  color: #020617;
+}
+
+.secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  margin-left: 16px;
+}
+
+/* GLASS CARD */
+.glass-card {
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.12),
+    rgba(255,255,255,0.04)
+  );
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 6px 14px;
+  background: rgba(56,189,248,0.2);
+  color: var(--accent);
+  border-radius: 999px;
+}
+
+/* FLOW */
+.flow, .value {
+  padding: 120px 80px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 60px;
+}
+
+.flow-grid, .value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.flow-card, .value-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 36px;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.flow-card:hover, .value-card:hover {
+  transform: translateY(-6px);
+}
+
+/* FOOTER */
+footer {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+}
+
+
+
