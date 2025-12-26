@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Institute Panel | ProofED</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav">
+  <div class="brand">ProofED</div>
+  <span class="tag">Institute Dashboard</span>
+</header>
+
+<!-- ================= MAIN SECTION ================= -->
+<main class="section">
+
+  <!-- ===== ISSUE FORM ===== -->
+  <div class="card form-card">
+    <h2>Issue Academic Certificate</h2>
+
+    <form id="issueForm" class="form">
+      <input id="student" type="text" placeholder="Student Name" required />
+      <input id="course" type="text" placeholder="Course / Contribution" required />
+
+      <select id="themeSelect">
+        <option value="classic">Classic Blue</option>
+        <option value="gold">Gold Prestige</option>
+        <option value="modern">Modern Minimal</option>
+      </select>
+
+      <button type="submit" class="btn primary">
+        🚀 Issue Certificate
+      </button>
+    </form>
+
+    <p class="note">
+      ⚠️ Demo mode: Certificate is simulated & stored locally
+    </p>
+  </div>
+
+  <!-- ================= CERTIFICATE PREVIEW ================= -->
+  <section id="certificatePreview" class="hidden cert-wrapper">
+    <div class="certificate classic">
+
+      <!-- Watermark -->
+      <div class="watermark">ProofED VERIFIED</div>
+
+      <!-- Header -->
+      <div class="cert-header">
+        <img src="assets/logo.png" class="inst-logo" alt="Institute Logo" />
+        <h2 id="certInstitute"></h2>
+      </div>
+
+      <h1>Certificate of Achievement</h1>
+      <p class="sub">This is to certify that</p>
+
+      <h2 id="certStudent"></h2>
+
+      <p>has successfully completed</p>
+      <h3 id="certCourse"></h3>
+
+      <div class="meta">
+        <div>
+          <strong>Certificate ID</strong>
+          <p id="certID"></p>
+          <p class="date" id="certDate"></p>
+        </div>
+
+        <div id="certQR"></div>
+      </div>
+
+      <!-- Signature -->
+      <div class="signature">
+        <img src="assets/signature.png" alt="Authorized Signature" />
+        <p>Authorized Signatory</p>
+      </div>
+
+      <span class="verified">✔ Verified on ProofED Ledger</span>
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="cert-actions">
+      <button onclick="downloadPDF()" class="btn secondary">
+        ⬇ Download PDF
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= SUCCESS OVERLAY ================= -->
+<div id="successOverlay" class="success hidden">
+  <div class="success-box">
+    <h2>🎉 Certificate Issued Successfully!</h2>
+    <p>Credential securely recorded on ProofED Ledger</p>
+        <button onclick="closeSuccess()" class="btn primary">
+      OK
+    </button>
+  </div>
+</div>
+
+<!-- ================= SCRIPTS ================= -->
+<script>
+  // Protect admin page
+  if (!localStorage.getItem("proofed_institute")) {
+    window.location.href = "login.html";
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

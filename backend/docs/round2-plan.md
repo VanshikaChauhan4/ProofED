@@ -1,0 +1,4 @@
+- Smart contracts (Ethereum)
+- IPFS certificate storage
+- Wallet-based student identity
+- AI student summary
