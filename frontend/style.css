@@ -1,0 +1,260 @@
+/* ================= GLOBAL ================= */
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= NAVBAR ================= */
+
+.nav {
+  background: white;
+  padding: 20px 60px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 22px;
+  color: #1d4ed8;
+}
+
+/* ================= HERO / SECTIONS ================= */
+
+.hero {
+  padding: 100px 60px;
+  background: white;
+}
+
+.hero h1 {
+  font-size: 44px;
+}
+
+.section {
+  padding: 80px 60px;
+}
+
+.section.light {
+  background: white;
+}
+
+/* ================= GRID & CARDS ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* ================= BUTTONS ================= */
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.primary {
+  background: #1d4ed8;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #1d4ed8;
+  color: #1d4ed8;
+}
+
+.download-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  padding: 30px;
+  text-align: center;
+  background: white;
+}
+
+/* ================= STATUS & QR ================= */
+
+.status.verified {
+  color: green;
+  font-weight: 600;
+}
+
+#qrcode,
+#studentQR {
+  margin-top: 20px;
+}
+
+/* ================= CERTIFICATE ================= */
+
+.cert-wrapper {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.certificate {
+  position: relative;
+  width: 850px;
+  padding: 40px;
+  background: #fff;
+  border: 8px solid #1e3a8a;
+  font-family: "Georgia", serif;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.certificate h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.certificate .sub {
+  font-style: italic;
+  margin-top: 20px;
+}
+
+.certificate h2 {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.certificate h3 {
+  font-size: 24px;
+  color: #374151;
+}
+
+.certificate .issuer {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.certificate .meta {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.certificate .date {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.verified {
+  display: inline-block;
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+}
+
+/* ================= CERTIFICATE THEMES ================= */
+
+.certificate.classic {
+  border-color: #1e3a8a;
+}
+
+.certificate.gold {
+  border-color: #b45309;
+  background: #fffbeb;
+}
+
+.certificate.modern {
+  border-color: #111827;
+  font-family: Arial, sans-serif;
+}
+
+/* ================= WATERMARK ================= */
+
+.watermark {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 80px;
+  color: rgba(0,0,0,0.05);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ================= CERT HEADER & SIGNATURE ================= */
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inst-logo {
+  width: 80px;
+}
+
+.signature {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.signature img {
+  width: 120px;
+}
+
+/* ================= SUCCESS OVERLAY ================= */
+
+.success {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.success-box {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 12px;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.hidden {
+  display: none;
+}
