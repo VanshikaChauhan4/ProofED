@@ -1,4 +1,4 @@
-import Certificate from "../models/cert.model.js"
+import Certificate from "../models/certificate.js"
 import { generateHash } from "../services/hash.service.js"
 
 export const issueCertificate = async (req, res) => {
