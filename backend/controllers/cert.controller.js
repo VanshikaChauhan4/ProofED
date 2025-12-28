@@ -1,27 +1,33 @@
-import Certificate from "../models/Certificate.js"
+import Certificate from "../models/cert.model.js"
 import { generateHash } from "../services/hash.service.js"
-import { addBlock } from "../services/blockchain.service.js"
 
 export const issueCertificate = async (req, res) => {
   try {
-    const { student, course } = req.body;
+    const { student, course, institute } = req.body
 
-    const hash = generateHash({ student, course })
-    const block = addBlock(hash)
+    if (!student || !course || !institute) {
+      return res.status(400).json({ message: "Missing fields" })
+    }
 
-    const cert = await Certificate.create({
+    const certData = {
       student,
       course,
-      hash,
-      blockHash: block.blockHash
+      institute,
+      issuedAt: new Date()
+    }
+
+    const hash = generateHash(certData)
+
+    const cert = await Certificate.create({
+      ...certData,
+      hash
     })
 
-    res.json({
+    res.status(201).json({
       success: true,
-      message: "Certificate issued & stored on blockchain",
-      cert
+      certificate: cert
     })
   } catch (err) {
-    res.status(500).json({ error: err.message })
+    res.status(500).json({ message: "Server error" })
   }
 }
