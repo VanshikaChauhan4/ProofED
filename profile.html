@@ -1,26 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>profile</title>
+  <title>Select Role</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+  <div class="card">
+    <h2>Select Role</h2>
+    <button onclick="location.href='user.html'">User</button>
+    <button onclick="location.href='institute.html'">Institute</button>
+  </div>
 </body>
 </html>
-<section class="profile-header">
-  <h1 id="studentName"></h1>
-  <p id="wallet"></p>
-  <h2 id="score"></h2>
-</section>
 
-<section class="badges" id="badges"></section>
 
-<section class="timeline">
-  <h3>Academic Timeline</h3>
-  <ul id="timeline"></ul>
-</section>
-<script src="profile.js"></script>
+  <title>User Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+  <h2>User Login</h2>
+
+  <!--  PHOTO CIRCLE -->
+  <div class="avatar" onclick="document.getElementById('userPhoto').click()">
+    <img id="userPreview">
+    <span id="userText">Upload Photo</span>
+    <input type="file" id="userPhoto" accept="image/*">
+  </div>
+
+  <input type="text" id="userName" placeholder="Full Name">
+  <input type="email" id="userEmail" placeholder="Email">
+  <input type="password" id="userId" placeholder="ID Number">
+
+  <button onclick="userLogin()">Login</button>
+</div>
+
+<script src="institute.js"></script>
 </body>
 </html>
